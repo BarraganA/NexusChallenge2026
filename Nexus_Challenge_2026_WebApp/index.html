@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#07182d" />
+  <meta name="description" content="Nexus Challenge 2026: Space Exploration · competencia de robótica escolar de Keybot." />
+  <title>Nexus Challenge 2026 · Space Exploration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="stars stars-a"></div>
+  <div class="stars stars-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio" aria-label="Nexus Challenge">
+      <div class="brand-word">NE<span class="xmark"><i></i></span>US</div>
+      <small>CHALLENGE 2026</small>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+
+    <nav id="nav">
+      <a href="#reto">El reto</a>
+      <a href="#cancha">Cancha</a>
+      <a href="#robot">Robot</a>
+      <a href="#match">Match Center</a>
+      <a href="#evento">Evento</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow">KEYBOT PRESENTA</div>
+        <h1>NEXUS <span>CHALLENGE 2026</span></h1>
+        <h2>SPACE EXPLORATION</h2>
+        <p>
+          Un mismo reto. Alianzas que cambian. Robots que exploran, transportan,
+          colocan y regresan al punto de conexión.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-yellow" href="#reto">Explorar el reto</a>
+          <a class="btn btn-ghost" href="#match">Abrir Match Center</a>
+        </div>
+
+        <div class="hero-meta">
+          <div><b>05</b><span>DIC 2026</span></div>
+          <div><b>2v2</b><span>ALIANZAS</span></div>
+          <div><b>1:30</b><span>POR MATCH</span></div>
+          <div><b>40</b><span>EQUIPOS META</span></div>
+        </div>
+      </div>
+
+      <div class="hero-orbit" aria-hidden="true">
+        <div class="planet"></div>
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="satellite"></div>
+        <div class="nexus-emblem">
+          <span class="half blue"></span>
+          <span class="half yellow"></span>
+          <b>NEXUS<br>ZONE</b>
+        </div>
+      </div>
+    </section>
+
+    <section class="countdown-wrap">
+      <span>Cuenta regresiva para la misión</span>
+      <div id="countdown" class="countdown">
+        <div><strong id="cdDays">—</strong><small>días</small></div>
+        <div><strong id="cdHours">—</strong><small>horas</small></div>
+        <div><strong id="cdMinutes">—</strong><small>min</small></div>
+        <div><strong id="cdSeconds">—</strong><small>seg</small></div>
+      </div>
+    </section>
+
+    <section class="section" id="reto">
+      <div class="section-heading">
+        <span>01 · MISIÓN</span>
+        <h2>¿Por qué Nexus?</h2>
+        <p>
+          “Nexus” significa punto de conexión. Cada match conecta personas,
+          ideas, tecnología y estrategias distintas para resolver un mismo problema.
+        </p>
+      </div>
+
+      <div class="mission-grid">
+        <article class="mission-card">
+          <span class="step">1</span>
+          <h3>Parte del Nexus</h3>
+          <p>Los cuatro robots comienzan en la Nexus Zone, divididos entre Blue y Yellow.</p>
+        </article>
+        <article class="mission-card">
+          <span class="step">2</span>
+          <h3>Recupera recursos</h3>
+          <p>Las pelotas de cada alianza están colocadas lejos de su Bahía de Carga.</p>
+        </article>
+        <article class="mission-card">
+          <span class="step">3</span>
+          <h3>Sube y coloca</h3>
+          <p>Los cubos deben desplazarse hasta la rampa y quedar sobre la plataforma superior.</p>
+        </article>
+        <article class="mission-card">
+          <span class="step">4</span>
+          <h3>Regresa</h3>
+          <p>En los últimos 15 segundos, vuelve a cualquier parte de la zona de color de tu alianza.</p>
+        </article>
+      </div>
+
+      <div class="phase-strip">
+        <div>
+          <b>FASE 1</b>
+          <strong>0:00 – 1:15</strong>
+          <span>Misión</span>
+        </div>
+        <div class="endgame">
+          <b>FASE 2</b>
+          <strong>1:15 – 1:30</strong>
+          <span>Endgame</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split" id="cancha">
+      <div class="section-heading compact">
+        <span>02 · CAMPO</span>
+        <h2>La cancha</h2>
+        <p>
+          Arena cuadrada de 2.4 × 2.4 m, con Nexus Zone central, Bahías de Carga,
+          rampas y Plataformas de Bloques para las alianzas Blue y Yellow.
+        </p>
+        <div class="legend">
+          <span><i class="dot blue-bg"></i> Blue Alliance</span>
+          <span><i class="dot yellow-bg"></i> Yellow Alliance</span>
+          <span><i class="dot neutral-bg"></i> Recursos</span>
+        </div>
+      </div>
+      <figure class="visual-card field-card">
+        <img src="assets/arena.png" alt="Cancha Nexus Challenge 2026" />
+      </figure>
+    </section>
+
+    <section class="section split reverse" id="robot">
+      <figure class="visual-card robot-card">
+        <img src="assets/robot-kit.png" alt="Robot oficial y componentes del kit Nexus Challenge" />
+      </figure>
+      <div class="section-heading compact">
+        <span>03 · PLATAFORMA</span>
+        <h2>Robot oficial</h2>
+        <p>
+          Una base común para todos y mecánica abierta para que cada equipo construya
+          su propia solución.
+        </p>
+        <div class="specs">
+          <div><b>Arduino UNO</b><span>Control</span></div>
+          <div><b>HC-05</b><span>Bluetooth</span></div>
+          <div><b>2WD</b><span>Tracción</span></div>
+          <div><b>SG90</b><span>Actuador</span></div>
+          <div><b>HC-SR04</b><span>Distancia</span></div>
+          <div><b>TCRT5000 ×2</b><span>Sensores IR</span></div>
+        </div>
+        <p class="callout">Electrónica limitada. <strong>Mecánica abierta.</strong></p>
+      </div>
+    </section>
+
+    <section class="section match-section" id="match">
+      <div class="section-heading">
+        <span>04 · MATCH CENTER</span>
+        <h2>Control de match y scoring</h2>
+        <p>Herramienta local para prácticas, demostraciones y operación básica del reto.</p>
+      </div>
+
+      <div class="match-grid">
+        <div class="timer-panel">
+          <div class="status-pill" id="phasePill">LISTO</div>
+          <div class="timer" id="timer">01:30</div>
+          <div class="timer-note" id="timerNote">90 segundos para explorar, competir y regresar.</div>
+
+          <div class="timer-actions">
+            <button class="btn btn-yellow" id="startBtn">Iniciar</button>
+            <button class="btn btn-ghost" id="pauseBtn">Pausar</button>
+            <button class="btn btn-ghost" id="resetBtn">Reiniciar</button>
+          </div>
+
+          <div class="timeline">
+            <div id="progressBar"></div>
+            <span class="end-marker" title="Inicio del Endgame"></span>
+          </div>
+
+          <div class="sound-toggle">
+            <label><input id="soundToggle" type="checkbox" checked> Sonidos de match</label>
+          </div>
+        </div>
+
+        <div class="scoreboard">
+          <div class="alliance alliance-blue">
+            <h3>BLUE</h3>
+            <div class="score" id="blueScore">0</div>
+            <div class="counter-row">
+              <span>Pelotas <small>+1</small></span>
+              <div class="counter">
+                <button data-team="blue" data-type="balls" data-delta="-1">−</button>
+                <b id="blueBalls">0</b>
+                <button data-team="blue" data-type="balls" data-delta="1">+</button>
+              </div>
+            </div>
+            <div class="counter-row">
+              <span>Cubos <small>+3</small></span>
+              <div class="counter">
+                <button data-team="blue" data-type="cubes" data-delta="-1">−</button>
+                <b id="blueCubes">0</b>
+                <button data-team="blue" data-type="cubes" data-delta="1">+</button>
+              </div>
+            </div>
+            <div class="counter-row">
+              <span>Robots en Nexus <small>+2</small></span>
+              <div class="counter">
+                <button data-team="blue" data-type="robots" data-delta="-1">−</button>
+                <b id="blueRobots">0</b>
+                <button data-team="blue" data-type="robots" data-delta="1">+</button>
+              </div>
+            </div>
+            <label class="bonus">
+              <input id="blueBonus" type="checkbox"> Ambos regresan <small>+2</small>
+            </label>
+          </div>
+
+          <div class="versus">VS</div>
+
+          <div class="alliance alliance-yellow">
+            <h3>YELLOW</h3>
+            <div class="score" id="yellowScore">0</div>
+            <div class="counter-row">
+              <span>Pelotas <small>+1</small></span>
+              <div class="counter">
+                <button data-team="yellow" data-type="balls" data-delta="-1">−</button>
+                <b id="yellowBalls">0</b>
+                <button data-team="yellow" data-type="balls" data-delta="1">+</button>
+              </div>
+            </div>
+            <div class="counter-row">
+              <span>Cubos <small>+3</small></span>
+              <div class="counter">
+                <button data-team="yellow" data-type="cubes" data-delta="-1">−</button>
+                <b id="yellowCubes">0</b>
+                <button data-team="yellow" data-type="cubes" data-delta="1">+</button>
+              </div>
+            </div>
+            <div class="counter-row">
+              <span>Robots en Nexus <small>+2</small></span>
+              <div class="counter">
+                <button data-team="yellow" data-type="robots" data-delta="-1">−</button>
+                <b id="yellowRobots">0</b>
+                <button data-team="yellow" data-type="robots" data-delta="1">+</button>
+              </div>
+            </div>
+            <label class="bonus">
+              <input id="yellowBonus" type="checkbox"> Ambos regresan <small>+2</small>
+            </label>
+          </div>
+        </div>
+
+        <div class="score-actions">
+          <button class="btn btn-ghost" id="clearScoreBtn">Limpiar marcador</button>
+          <button class="btn btn-blue" id="copyResultBtn">Copiar resultado</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section event-section" id="evento">
+      <div class="section-heading">
+        <span>05 · EVENTO</span>
+        <h2>La misión completa</h2>
+      </div>
+
+      <div class="event-grid">
+        <article>
+          <strong>40</strong>
+          <span>equipos meta</span>
+          <p>Equipos de 4 a 5 estudiantes.</p>
+        </article>
+        <article>
+          <strong>5</strong>
+          <span>matches clasificatorios</span>
+          <p>Alianzas rotativas durante la fase clasificatoria.</p>
+        </article>
+        <article>
+          <strong>$2,800</strong>
+          <span>Early Bird</span>
+          <p>Limitado a los primeros 20 equipos.</p>
+        </article>
+        <article>
+          <strong>$3,200</strong>
+          <span>Regular</span>
+          <p>Inscripción por equipo.</p>
+        </article>
+      </div>
+
+      <div class="final-banner">
+        <div>
+          <small>NEXUS CHALLENGE 2026</small>
+          <h3>Explora. Diseña. Compite.</h3>
+          <p>5 de diciembre de 2026 · Tecnológico de Monterrey, Campus Hidalgo</p>
+        </div>
+        <a class="btn btn-yellow" href="#inicio">Volver arriba</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <b>NEXUS CHALLENGE 2026</b>
+    <span>Una iniciativa de Keybot · Space Exploration</span>
+  </footer>
+
+  <div class="toast" id="toast">Resultado copiado</div>
+  <script src="app.js"></script>
+</body>
+</html>
