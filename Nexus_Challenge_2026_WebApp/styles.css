@@ -12,6 +12,7 @@
   --shadow:0 24px 80px rgba(0,0,0,.35);
   --radius:26px;
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -279,4 +280,117 @@ footer b{color:white;letter-spacing:.08em}
   .event-grid{grid-template-columns:1fr 1fr}
   .final-banner{align-items:flex-start;flex-direction:column}
   footer{flex-direction:column;gap:8px}
+}
+
+/* Official identity and the animated mission cover. */
+html{scroll-padding-top:100px}
+.skip-link{position:fixed;top:12px;left:12px;z-index:200;padding:12px 18px;background:var(--yellow);color:var(--navy);border-radius:8px;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0)}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:5px}
+.brand-logo{display:block;width:175px;height:auto}
+.topbar .brand{line-height:1}
+.hero{min-height:780px;padding-top:72px;padding-bottom:95px;gap:20px;overflow:clip}
+.hero h1{font-size:inherit;line-height:1;margin:0 0 30px}
+.hero-logo{display:block;width:100%;max-width:600px;height:auto;filter:drop-shadow(0 8px 30px rgba(0,132,255,.15))}
+.hero h2{font:600 clamp(31px,3.5vw,46px)/1.12 'Space Grotesk',sans-serif;letter-spacing:-.035em;margin:0 0 22px;color:var(--white)}
+.hero h2 span{color:var(--yellow)}
+.hero p{font-size:16px;max-width:510px;line-height:1.8}
+.eyebrow{display:flex;align-items:center;gap:10px;letter-spacing:.28em;font-size:10px;margin-bottom:28px}
+.signal-dot{width:7px;height:7px;flex-shrink:0;border-radius:50%;background:var(--yellow);box-shadow:0 0 16px rgba(255,196,0,.7);animation:signal 3s ease-in-out infinite}
+.hero-actions .btn{gap:24px}
+.hero-meta{margin-top:32px;gap:0;border-block:1px solid var(--line)}
+.hero-meta div{border:0;border-radius:0;background:transparent;padding:20px 12px}
+.hero-meta div:first-child{padding-left:0}
+.hero-meta div+div{border-left:1px solid var(--line)}
+.hero-meta b{font-size:24px;margin-bottom:6px}
+.hero-meta span{font-size:8px;letter-spacing:.12em;white-space:nowrap}
+.hero-orbit{isolation:isolate;height:550px;min-width:0}
+.hero-orbit::before{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(ellipse,rgba(22,136,255,.15),transparent 65%);filter:blur(8px)}
+.orbital-grid{position:absolute;inset:3% -3%;background:linear-gradient(rgba(91,163,241,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(91,163,241,.05) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse,#000 15%,transparent 70%);transform:perspective(600px) rotateX(25deg)}
+.hero-orbit .planet{width:320px;height:320px;animation:planet-float 9s ease-in-out infinite;box-shadow:0 0 85px rgba(19,122,234,.25),inset -65px -40px 75px rgba(0,0,0,.72)}
+.hero-orbit .planet::after{inset:-14px;border-color:rgba(108,192,255,.16);box-shadow:0 0 30px rgba(0,167,255,.1)}
+.hero-orbit .orbit{border-color:rgba(106,178,242,.24);width:98%;height:56%;z-index:2}
+.hero-orbit .orbit-1{animation:orbit-one 38s linear infinite}
+.hero-orbit .orbit-2{width:110%;height:76%;border-color:rgba(255,196,0,.2);animation:orbit-two 49s linear infinite reverse}
+.hero-orbit .orbit-3{width:83%;height:83%;border-style:dashed;border-color:rgba(124,191,250,.12);animation:orbit-three 80s linear infinite}
+.satellite-track{position:absolute;left:50%;top:52%;width:90%;height:90%;transform:translate(-50%,-50%);animation:satellite-orbit 28s linear infinite;z-index:3;pointer-events:none}
+.satellite-track .satellite{width:12px;height:12px;right:8%;top:15%;box-shadow:0 0 18px rgba(255,196,0,.6)}
+.track-blue{width:79%;height:79%;animation-duration:40s;animation-direction:reverse}
+.track-blue .satellite{width:8px;height:8px;background:#4bbcff;box-shadow:0 0 20px #1688ff}
+.nexus-emblem{width:145px;height:145px;border-width:5px;z-index:4;animation:emblem-float 9s ease-in-out infinite}
+.nexus-emblem b{font-size:24px}
+.orbit-coordinate{position:absolute;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:8px;font-weight:600;letter-spacing:.19em;color:#8aabc8}
+.coordinate-top{top:3%}
+.coordinate-top span{color:var(--yellow);margin:0 12px}
+.coordinate-bottom{bottom:0;padding:12px 16px;border:1px solid var(--line);border-radius:999px;background:rgba(7,24,45,.65)}
+.coordinate-bottom i{display:inline-block;width:5px;height:5px;background:#4bbcff;border-radius:50%;margin-right:8px}
+.scroll-cue{position:absolute;bottom:28px;left:24px;display:flex;align-items:center;gap:12px;color:#8da9c2;font-size:8px;letter-spacing:.22em}
+.scroll-cue span{font-size:19px;color:var(--yellow);animation:scroll-nudge 2.5s ease-in-out infinite}
+.stars-a{animation:star-twinkle 8s ease-in-out infinite alternate}
+.stars-b{transform:none;animation:star-twinkle 11s ease-in-out infinite alternate-reverse}
+nav a{position:relative;padding:10px 0}
+nav a::after{content:"";position:absolute;bottom:2px;left:0;width:100%;height:2px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+nav a:hover::after,nav a[aria-current]::after{transform:scaleX(1)}
+nav a[aria-current]{color:#fff}
+.mission-card{transition:transform .3s,border-color .3s,box-shadow .3s}
+.mission-card:hover{transform:translateY(-7px);border-color:rgba(61,163,255,.6);box-shadow:0 18px 44px rgba(0,0,0,.2)}
+.mission-card:nth-child(even):hover{border-color:rgba(255,196,0,.6)}
+.visual-card{transition:border-color .3s}
+.visual-card img{transition:transform .7s ease}
+.visual-card:hover img{transform:scale(1.025)}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease var(--reveal-delay,0ms),transform .7s ease var(--reveal-delay,0ms)}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+footer{align-items:center;gap:24px}
+.footer-logo{display:block;width:165px;height:auto}
+.motion-toggle{cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.03);color:#bbcddd;font-size:10px;padding:11px 14px;border-radius:999px;white-space:nowrap}
+.motion-toggle:hover{border-color:var(--yellow);color:#fff}
+@keyframes signal{0%,100%{box-shadow:0 0 0 0 rgba(255,196,0,.3)}50%{box-shadow:0 0 0 7px rgba(255,196,0,0)}}
+@keyframes planet-float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-53%)}}
+@keyframes emblem-float{0%,100%{transform:translate(-50%,-50%)}50%{transform:translate(-50%,-57%)}}
+@keyframes orbit-one{from{transform:translate(-50%,-50%) rotate(-18deg)}to{transform:translate(-50%,-50%) rotate(342deg)}}
+@keyframes orbit-two{from{transform:translate(-50%,-50%) rotate(32deg)}to{transform:translate(-50%,-50%) rotate(392deg)}}
+@keyframes orbit-three{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes satellite-orbit{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes star-twinkle{from{opacity:.25}to{opacity:.7}}
+@keyframes scroll-nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+html[data-motion="paused"]{scroll-behavior:auto}
+html[data-motion="paused"] *,html[data-motion="paused"] *::before,html[data-motion="paused"] *::after{animation-play-state:paused!important;transition:none!important}
+html[data-motion="paused"] .reveal{opacity:1;transform:none}
+@media(max-width:900px){
+  .hero{padding-top:55px;gap:30px}
+  .hero-logo{max-width:550px}
+  .hero h2{font-size:40px}
+  .hero-orbit{width:min(100%,530px);height:480px;margin:0 auto 10px}
+  .hero-meta{max-width:550px;grid-template-columns:repeat(4,1fr)}
+  .hero-meta div:nth-child(3){border-left:1px solid var(--line)}
+  .topbar .brand-logo{width:170px}
+}
+@media(max-width:600px){
+  html{scroll-padding-top:88px}
+  #nav{top:70px;gap:12px}
+  .hero{padding:48px 20px 80px;gap:25px}
+  .hero h1{margin-bottom:25px}
+  .hero h2{font-size:34px;letter-spacing:-.04em}
+  .hero p{font-size:15px}
+  .eyebrow{font-size:8px;letter-spacing:.2em;margin-bottom:24px}
+  .hero-actions{gap:10px;margin-top:24px}
+  .hero-actions .btn{font-size:12px;padding:13px 16px;gap:14px}
+  .hero-meta{grid-template-columns:repeat(2,1fr);margin-top:28px}
+  .hero-meta div:nth-child(3){border-left:0;padding-left:0}
+  .hero-meta div:nth-child(n+3){border-top:1px solid var(--line)}
+  .hero-meta span{font-size:8px}
+  .hero-orbit{height:350px;margin-bottom:0}
+  .hero-orbit .planet{width:230px;height:230px}
+  .hero-orbit .nexus-emblem{width:112px;height:112px}
+  .nexus-emblem b{font-size:20px}
+  .orbit-coordinate{font-size:6px;letter-spacing:.14em}
+  .coordinate-top{top:0}
+  .coordinate-bottom{bottom:-4px}
+  .scroll-cue{left:20px;bottom:22px}
+  footer{align-items:flex-start}
+}
+@media(prefers-reduced-motion:reduce){
+  html:not([data-motion="playing"]){scroll-behavior:auto}
+  html:not([data-motion="playing"]) *,html:not([data-motion="playing"]) *::before,html:not([data-motion="playing"]) *::after{animation:none!important;transition:none!important}
+  html:not([data-motion="playing"]) .reveal{opacity:1;transform:none}
 }

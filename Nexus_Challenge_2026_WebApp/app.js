@@ -3,8 +3,65 @@ const qsa = (s) => [...document.querySelectorAll(s)];
 
 const menuBtn = qs('#menuBtn');
 const nav = qs('#nav');
-menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
-qsa('#nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+function closeMenu(){
+  nav.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.setAttribute('aria-label','Abrir menú');
+}
+menuBtn.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',String(open));
+  menuBtn.setAttribute('aria-label',open ? 'Cerrar menú' : 'Abrir menú');
+});
+qsa('#nav a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown',event=>{if(event.key==='Escape') closeMenu();});
+
+// Motion remains optional, including for visitors who prefer reduced motion.
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const motionToggle = qs('#motionToggle');
+let savedMotion = null;
+try { savedMotion = localStorage.getItem('nexus-motion'); } catch {}
+let motionPaused = reducedMotion.matches || savedMotion === 'paused';
+function renderMotion(){
+  document.documentElement.dataset.motion = motionPaused ? 'paused' : 'playing';
+  motionToggle.setAttribute('aria-pressed',String(motionPaused));
+  motionToggle.textContent = motionPaused ? 'Activar animaciones' : 'Pausar animaciones';
+}
+motionToggle.addEventListener('click',()=>{
+  motionPaused = !motionPaused;
+  renderMotion();
+  try { localStorage.setItem('nexus-motion',motionPaused ? 'paused' : 'playing'); } catch {}
+});
+reducedMotion.addEventListener('change',event=>{
+  if(event.matches){motionPaused=true;renderMotion();}
+});
+renderMotion();
+
+if('IntersectionObserver' in window){
+  const revealObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.08});
+  qsa('.section-heading, .mission-card, .visual-card, .match-grid, .event-grid article, .final-banner').forEach((element,index)=>{
+    element.style.setProperty('--reveal-delay',`${Math.min(index%4,3)*70}ms`);
+    revealObserver.observe(element);
+    element.classList.add('reveal');
+  });
+  const sectionObserver = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      qsa('#nav a').forEach(link=>{
+        if(link.hash===`#${entry.target.id}`) link.setAttribute('aria-current','location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  },{rootMargin:'-20% 0px -55% 0px'});
+  qsa('main section[id]').forEach(section=>sectionObserver.observe(section));
+}
 
 // Countdown
 const eventDate = new Date('2026-12-05T08:30:00-06:00').getTime();

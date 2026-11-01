@@ -12,16 +12,16 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="stars stars-a"></div>
-  <div class="stars stars-b"></div>
+  <div class="stars stars-a" aria-hidden="true"></div>
+  <div class="stars stars-b" aria-hidden="true"></div>
+  <a class="skip-link" href="#reto">Saltar al contenido</a>
 
   <header class="topbar">
     <a class="brand" href="#inicio" aria-label="Nexus Challenge">
-      <div class="brand-word">NE<span class="xmark"><i></i></span>US</div>
-      <small>CHALLENGE 2026</small>
+      <img class="brand-logo" src="assets/nexus-logo.png" alt="Nexus Challenge 2026 · Space Exploration" width="2152" height="731" />
     </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="nav" aria-expanded="false">☰</button>
 
     <nav id="nav">
       <a href="#reto">El reto</a>
@@ -35,16 +35,16 @@
   <main>
     <section class="hero" id="inicio">
       <div class="hero-copy">
-        <div class="eyebrow">KEYBOT PRESENTA</div>
-        <h1>NEXUS <span>CHALLENGE 2026</span></h1>
-        <h2>SPACE EXPLORATION</h2>
+        <div class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> KEYBOT 5716 PRESENTA</div>
+        <h1><img class="hero-logo" src="assets/nexus-logo.png" alt="Nexus Challenge 2026 · Space Exploration" width="2152" height="731" fetchpriority="high" /></h1>
+        <h2>Tu ingenio nos lleva<br><span>más allá.</span></h2>
         <p>
           Un mismo reto. Alianzas que cambian. Robots que exploran, transportan,
           colocan y regresan al punto de conexión.
         </p>
 
         <div class="hero-actions">
-          <a class="btn btn-yellow" href="#reto">Explorar el reto</a>
+          <a class="btn btn-yellow" href="#reto">Explorar el reto <span aria-hidden="true">↗</span></a>
           <a class="btn btn-ghost" href="#match">Abrir Match Center</a>
         </div>
 
@@ -57,16 +57,22 @@
       </div>
 
       <div class="hero-orbit" aria-hidden="true">
+        <div class="orbital-grid"></div>
         <div class="planet"></div>
         <div class="orbit orbit-1"></div>
         <div class="orbit orbit-2"></div>
-        <div class="satellite"></div>
+        <div class="orbit orbit-3"></div>
+        <div class="satellite-track"><div class="satellite"></div></div>
+        <div class="satellite-track track-blue"><div class="satellite"></div></div>
         <div class="nexus-emblem">
           <span class="half blue"></span>
           <span class="half yellow"></span>
           <b>NEXUS<br>ZONE</b>
         </div>
+        <div class="orbit-coordinate coordinate-top">MISIÓN 2026 <span>·</span> HIDALGO, MÉXICO</div>
+        <div class="orbit-coordinate coordinate-bottom"><i></i> CONECTA · CONSTRUYE · EXPLORA</div>
       </div>
+      <a class="scroll-cue" href="#reto"><span aria-hidden="true">↓</span> DESCUBRE LA MISIÓN</a>
     </section>
 
     <section class="countdown-wrap">
@@ -313,8 +319,9 @@
   </main>
 
   <footer>
-    <b>NEXUS CHALLENGE 2026</b>
+    <a href="#inicio"><img class="footer-logo" src="assets/nexus-logo.png" alt="Nexus Challenge 2026" width="2152" height="731" loading="lazy" /></a>
     <span>Una iniciativa de Keybot · Space Exploration</span>
+    <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">Pausar animaciones</button>
   </footer>
 
   <div class="toast" id="toast">Resultado copiado</div>
