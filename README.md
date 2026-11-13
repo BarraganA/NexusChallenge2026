@@ -29,3 +29,8 @@ nexus_challenge_app/
     ├── robot-kit.png
     └── inspiracion.png
 ```
+# Hola. soy un programador externo, me di cuenta que el sitio no funcionaba asi que hice un 
+# pequeño fork para que pudiera funcionar, no hice gran cosa solo era cuestion de quitar la carpeta
+# pues el deployments trataba de acceder a un archivo que estaba afuera de la carpeta (index.html)
+
+# y ya :) me llamo Angel 
