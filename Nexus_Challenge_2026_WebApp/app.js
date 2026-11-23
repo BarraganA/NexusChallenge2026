@@ -46,7 +46,7 @@ if('IntersectionObserver' in window){
       }
     });
   },{threshold:0.08});
-  qsa('.section-heading, .mission-card, .visual-card, .match-grid, .event-grid article, .final-banner').forEach((element,index)=>{
+  qsa('.section-heading, .mission-card, .visual-card, .point-card, .rule-panel, .match-grid, .event-grid article, .final-banner').forEach((element,index)=>{
     element.style.setProperty('--reveal-delay',`${Math.min(index%4,3)*70}ms`);
     revealObserver.observe(element);
     element.classList.add('reveal');
@@ -128,17 +128,17 @@ function renderTimer(){
     phasePill.textContent = 'LISTO';
     phasePill.className = 'status-pill';
     timer.classList.remove('endgame');
-    timerNote.textContent = '90 segundos para explorar, competir y regresar.';
+    timerNote.textContent = '90 segundos para explorar, competir y estacionarse.';
   } else if(remaining > ENDGAME_SECONDS){
     phasePill.textContent = 'MISIÓN';
     phasePill.className = 'status-pill';
     timer.classList.remove('endgame');
-    timerNote.textContent = 'Recupera recursos y anota.';
+    timerNote.textContent = 'Recupera recursos y anota: una pelota o un cubo a la vez.';
   } else if(remaining > 0){
     phasePill.textContent = 'ENDGAME';
     phasePill.className = 'status-pill endgame';
     timer.classList.add('endgame');
-    timerNote.textContent = 'Regresa a la Nexus Zone.';
+    timerNote.textContent = 'Endgame: estaciónate en el semicírculo de tu alianza.';
   } else {
     phasePill.textContent = 'MATCH FINALIZADO';
     phasePill.className = 'status-pill';
@@ -187,55 +187,71 @@ qs('#resetBtn').addEventListener('click', ()=>{
 });
 renderTimer();
 
-// Scoring
-const state = {
-  blue: {balls:0,cubes:0,robots:0,bonus:false},
-  yellow:{balls:0,cubes:0,robots:0,bonus:false}
-};
+// Scoring (Reglamento oficial v1.4, sección 5 y tabla de faltas G05–G06)
+const POINTS = {balls:1, cubes:3, robots:2, parkBonus:2};
+const FOUL_POINTS = {poss:1, minor:3, major:10}; // se suman a la alianza contraria
+const LIMITS = {balls:5, cubes:4, robots:2, poss:99, minor:99, major:9};
+const TEAMS = ['blue','yellow'];
+const NAMES = {blue:'Blue', yellow:'Yellow'};
+const rival = team => team === 'blue' ? 'yellow' : 'blue';
+const emptyTeam = () => ({balls:0,cubes:0,robots:0,poss:0,minor:0,major:0});
+const state = {blue:emptyTeam(), yellow:emptyTeam()};
 
-const ids = {
-  blue:{balls:'#blueBalls',cubes:'#blueCubes',robots:'#blueRobots',score:'#blueScore'},
-  yellow:{balls:'#yellowBalls',cubes:'#yellowCubes',robots:'#yellowRobots',score:'#yellowScore'}
-};
-
-function calcScore(team){
+function fieldPoints(team){
   const s = state[team];
-  return (s.balls*1) + (s.cubes*3) + (s.robots*2) + (s.bonus ? 2 : 0);
+  return s.balls*POINTS.balls + s.cubes*POINTS.cubes + s.robots*POINTS.robots + (s.robots === 2 ? POINTS.parkBonus : 0);
 }
-function renderScore(team){
-  qs(ids[team].balls).textContent = state[team].balls;
-  qs(ids[team].cubes).textContent = state[team].cubes;
-  qs(ids[team].robots).textContent = state[team].robots;
-  qs(ids[team].score).textContent = calcScore(team);
+function foulPointsReceived(team){
+  const r = state[rival(team)];
+  return r.poss*FOUL_POINTS.poss + r.minor*FOUL_POINTS.minor + r.major*FOUL_POINTS.major;
 }
+function calcScore(team){ return fieldPoints(team) + foulPointsReceived(team); }
+
+function renderTeam(team){
+  const s = state[team];
+  const prefix = `#${team}`;
+  ['balls','cubes','robots','poss','minor','major'].forEach(type=>{
+    const key = type.charAt(0).toUpperCase()+type.slice(1);
+    qs(`${prefix}${key}`).textContent = s[type];
+  });
+  qs(`${prefix}Score`).textContent = calcScore(team);
+  qs(`${prefix}Breakdown`).textContent = `Cancha ${fieldPoints(team)} · Faltas del rival ${foulPointsReceived(team)}`;
+  qs(`${prefix}FoulCount`).textContent = s.poss + s.minor + s.major;
+  qs(`${prefix}Bonus`).classList.toggle('active', s.robots === 2);
+}
+function renderResult(){
+  const b = calcScore('blue'), y = calcScore('yellow');
+  const box = qs('#matchResult');
+  box.className = 'match-result ' + (b===y ? 'tie' : b>y ? 'blue-wins' : 'yellow-wins');
+  box.textContent = b===y ? 'Empate · 1 RP para cada alianza'
+    : `Gana ${b>y ? 'Blue' : 'Yellow'} Alliance · 2 RP para cada equipo de la alianza`;
+}
+function renderScores(){ TEAMS.forEach(renderTeam); renderResult(); }
+
 qsa('.counter button').forEach(btn=>{
   btn.addEventListener('click', ()=>{
-    const team = btn.dataset.team;
-    const type = btn.dataset.type;
+    const {team, type} = btn.dataset;
     const delta = Number(btn.dataset.delta);
-    const max = type === 'robots' ? 2 : 99;
-    state[team][type] = Math.max(0,Math.min(max,state[team][type]+delta));
-    renderScore(team);
+    state[team][type] = Math.max(0,Math.min(LIMITS[type],state[team][type]+delta));
+    renderScores();
   });
 });
-qs('#blueBonus').addEventListener('change',e=>{state.blue.bonus=e.target.checked;renderScore('blue')});
-qs('#yellowBonus').addEventListener('change',e=>{state.yellow.bonus=e.target.checked;renderScore('yellow')});
 
 function clearScores(){
-  ['blue','yellow'].forEach(team=>{
-    state[team]={balls:0,cubes:0,robots:0,bonus:false};
-    renderScore(team);
-  });
-  qs('#blueBonus').checked=false;
-  qs('#yellowBonus').checked=false;
+  TEAMS.forEach(team=>{ state[team] = emptyTeam(); });
+  renderScores();
 }
 qs('#clearScoreBtn').addEventListener('click',clearScores);
 clearScores();
 
 function resultText(){
   const b = calcScore('blue'), y = calcScore('yellow');
-  const winner = b===y ? 'Empate' : b>y ? 'Blue Alliance' : 'Yellow Alliance';
-  return `Nexus Challenge 2026 · Resultado\nBlue ${b} - ${y} Yellow\nGanador: ${winner}`;
+  const winner = b===y ? 'Empate (1 RP cada alianza)' : `${b>y ? 'Blue' : 'Yellow'} Alliance (2 RP)`;
+  const line = team => {
+    const s = state[team];
+    return `${NAMES[team]}: ${s.balls} pelotas, ${s.cubes} cubos, ${s.robots} estacionados${s.robots===2?' + bonus':''}; faltas cometidas: ${s.poss} posesión, ${s.minor} menores, ${s.major} mayores`;
+  };
+  return `Nexus Challenge 2026 · Resultado\nBlue ${b} - ${y} Yellow\nGanador: ${winner}\n${line('blue')}\n${line('yellow')}`;
 }
 qs('#copyResultBtn').addEventListener('click',async()=>{
   try{

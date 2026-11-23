@@ -4,21 +4,33 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#07182d" />
-  <meta name="description" content="Nexus Challenge 2026: Space Exploration · competencia de robótica escolar de Keybot." />
-  <title>Nexus Challenge 2026 · Space Exploration</title>
+  <meta name="description" content="TECH FEST 2026 presenta Nexus Challenge 2026: Space Exploration, competencia de robótica para primaria y secundaria organizada por Keybot 5716 en el Tec de Monterrey, Campus Hidalgo." />
+  <title>Nexus Challenge 2026 · Space Exploration · TECH FEST 2026</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20261101-keybot" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/nexus-logo.webp" type="image/webp">
+  <link rel="stylesheet" href="styles.css?v=20261123-techfest" />
 </head>
 <body>
   <div class="stars stars-a" aria-hidden="true"></div>
   <div class="stars stars-b" aria-hidden="true"></div>
   <a class="skip-link" href="#reto">Saltar al contenido</a>
 
+  <div class="tf-bar" role="region" aria-label="TECH FEST 2026">
+    <div class="tf-inner">
+      <a class="tf-brand" href="https://greenyellow-swan-764920.hostingersite.com/" target="_blank" rel="noopener" aria-label="TECH FEST 2026 (abre el sitio de TECH FEST en una pestaña nueva)">
+        <span class="tf-logo" aria-hidden="true">TEC<span class="tf-h">H</span> FEST <span class="tf-year">2026</span></span>
+        <span class="tf-presents">presenta…</span>
+      </a>
+      <span class="tf-meta">Tec de Monterrey · Campus Hidalgo <i aria-hidden="true">·</i> 04 y 05 de diciembre</span>
+      <a class="tf-btn" href="https://greenyellow-swan-764920.hostingersite.com/" target="_blank" rel="noopener">Conoce TECH FEST <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+
   <header class="topbar">
-    <a class="brand" href="#inicio" aria-label="Nexus Challenge">
-      <img class="brand-logo" src="assets/nexus-logo.png" alt="Nexus Challenge 2026 · Space Exploration" width="2152" height="731" />
+    <a class="brand" href="#inicio" aria-label="Nexus Challenge, ir al inicio">
+      <img class="brand-logo" src="assets/nexus-logo.webp" alt="Nexus Challenge 2026 · Space Exploration" width="1400" height="476" />
     </a>
 
     <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-controls="nav" aria-expanded="false">☰</button>
@@ -26,6 +38,7 @@
     <nav id="nav">
       <a href="#reto">El reto</a>
       <a href="#cancha">Cancha</a>
+      <a href="#puntos">Puntuación</a>
       <a href="#robot">Robot</a>
       <a href="#match">Match Center</a>
       <a href="#evento">Evento</a>
@@ -35,24 +48,28 @@
   <main>
     <section class="hero" id="inicio">
       <div class="hero-copy">
-        <div class="eyebrow organizer"><span class="organizer-logo"><img src="assets/keybot-logo.png" alt="Keybot" width="58" height="58" /></span><span>KEYBOT 5716 PRESENTA</span></div>
-        <h1><img class="hero-logo" src="assets/nexus-logo.png" alt="Nexus Challenge 2026 · Space Exploration" width="2152" height="731" fetchpriority="high" /></h1>
+        <div class="eyebrow organizer"><span class="organizer-logo"><img src="assets/keybot-logo.webp" alt="Keybot" width="58" height="58" /></span><span>ORGANIZA KEYBOT 5716</span></div>
+        <h1><img class="hero-logo" src="assets/nexus-logo.webp" alt="Nexus Challenge 2026 · Space Exploration" width="1400" height="476" fetchpriority="high" /></h1>
         <h2>Tu ingenio nos lleva<br><span>más allá.</span></h2>
         <p>
           Un mismo reto. Alianzas que cambian. Robots que exploran, transportan,
           colocan y regresan al punto de conexión.
         </p>
+        <div class="divisions" aria-label="Divisiones">
+          <span><b>Primaria</b> 5.º y 6.º</span>
+          <span><b>Secundaria</b> 1.º a 3.º</span>
+        </div>
 
         <div class="hero-actions">
           <a class="btn btn-yellow" href="#reto">Explorar el reto <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-ghost" href="#match">Abrir Match Center</a>
+          <a class="btn btn-ghost" href="https://drive.google.com/file/d/1NEFhxHEbgVcxr0g0PdNnN9bzA6Ss_avW/view" target="_blank" rel="noopener">Reglamento oficial</a>
         </div>
 
         <div class="hero-meta">
           <div><b>05</b><span>DIC 2026</span></div>
           <div><b>2v2</b><span>ALIANZAS</span></div>
           <div><b>1:30</b><span>POR MATCH</span></div>
-          <div><b>40</b><span>EQUIPOS META</span></div>
+          <div><b>40</b><span>EQUIPOS MÁX.</span></div>
         </div>
       </div>
 
@@ -75,7 +92,7 @@
       <a class="scroll-cue" href="#reto"><span aria-hidden="true">↓</span> DESCUBRE LA MISIÓN</a>
     </section>
 
-    <section class="countdown-wrap">
+    <section class="countdown-wrap" aria-label="Cuenta regresiva">
       <span>Cuenta regresiva para la misión</span>
       <div id="countdown" class="countdown">
         <div><strong id="cdDays">—</strong><small>días</small></div>
@@ -91,7 +108,9 @@
         <h2>¿Por qué Nexus?</h2>
         <p>
           “Nexus” significa punto de conexión. Cada match conecta personas,
-          ideas, tecnología y estrategias distintas para resolver un mismo problema.
+          ideas, tecnología y estrategias distintas para resolver un mismo problema:
+          un robot básico debe poder aportar puntos, un robot avanzado debe resolver
+          retos mecánicos complejos, y una buena alianza logra lo que un robot solo jamás alcanzaría.
         </p>
       </div>
 
@@ -99,22 +118,22 @@
         <article class="mission-card">
           <span class="step">1</span>
           <h3>Parte del Nexus</h3>
-          <p>Los cuatro robots comienzan en la Nexus Zone, divididos entre Blue y Yellow.</p>
+          <p>Los cuatro robots salen de la Nexus Zone central, un círculo de 80 cm dividido en sector Blue y sector Yellow.</p>
         </article>
         <article class="mission-card">
           <span class="step">2</span>
           <h3>Recupera recursos</h3>
-          <p>Las pelotas de cada alianza están colocadas lejos de su Bahía de Carga.</p>
+          <p>Lleva las pelotas de tu color a tu Bahía de Carga. Solo una pelota a la vez: arrear pelotas está prohibido.</p>
         </article>
         <article class="mission-card">
           <span class="step">3</span>
           <h3>Sube y coloca</h3>
-          <p>Los cubos deben desplazarse hasta la rampa y quedar sobre la plataforma superior.</p>
+          <p>Sube los cubos por la rampa hasta la plataforma superior. Toca un cubo a la vez; empujar cubos en hilera sí se vale.</p>
         </article>
         <article class="mission-card">
           <span class="step">4</span>
-          <h3>Regresa</h3>
-          <p>En los últimos 15 segundos, vuelve a cualquier parte de la zona de color de tu alianza.</p>
+          <h3>Estaciónate</h3>
+          <p>En los últimos 15 segundos, estaciónate dentro del semicírculo de tu alianza en la Nexus Zone.</p>
         </article>
       </div>
 
@@ -130,6 +149,7 @@
           <span>Endgame</span>
         </div>
       </div>
+      <p class="note">Partidas 100 % teleoperadas por Bluetooth, sin periodo autónomo. Una señal sonora y visual avisa el inicio del Endgame; el estacionamiento se valida cuando se detiene el reloj.</p>
     </section>
 
     <section class="section split" id="cancha">
@@ -137,9 +157,17 @@
         <span>02 · CAMPO</span>
         <h2>La cancha</h2>
         <p>
-          Arena cuadrada de 2.4 × 2.4 m, con Nexus Zone central, Bahías de Carga,
+          Arena de 2.4 × 2.4 m con Nexus Zone central, Bahías de Carga,
           rampas y Plataformas de Bloques para las alianzas Blue y Yellow.
         </p>
+        <dl class="field-specs">
+          <div><dt>Nexus Zone</dt><dd>Círculo de 80 cm</dd></div>
+          <div><dt>Bahías de Carga</dt><dd>35 × 35 cm, en esquinas opuestas</dd></div>
+          <div><dt>Rampa</dt><dd>40 cm de largo, sube a 10 cm (≈14°)</dd></div>
+          <div><dt>Plataforma</dt><dd>30 × 30 cm</dd></div>
+          <div><dt>Pelotas</dt><dd>5 Blue · 5 Yellow (6.5–7 cm)</dd></div>
+          <div><dt>Cubos</dt><dd>4 Blue · 4 Yellow (5 cm)</dd></div>
+        </dl>
         <div class="legend">
           <span><i class="dot blue-bg"></i> Blue Alliance</span>
           <span><i class="dot yellow-bg"></i> Yellow Alliance</span>
@@ -147,45 +175,97 @@
         </div>
       </div>
       <figure class="visual-card field-card">
-        <img src="assets/arena.png" alt="Cancha Nexus Challenge 2026" />
+        <img src="assets/arena.webp" alt="Cancha Nexus Challenge 2026" width="1316" height="906" loading="lazy" decoding="async" />
       </figure>
+    </section>
+
+    <section class="section" id="puntos">
+      <div class="section-heading">
+        <span>03 · PUNTUACIÓN</span>
+        <h2>Cómo se gana</h2>
+        <p>Los puntos se cuentan al terminar el match. Las faltas suman puntos a la alianza contraria.</p>
+      </div>
+
+      <div class="points-grid">
+        <article class="point-card"><strong>+1</strong><h3>Pelota en bahía</h3><p>Completamente dentro de la Bahía de Carga de su color.</p></article>
+        <article class="point-card"><strong>+3</strong><h3>Cubo en plataforma</h3><p>Sobre la superficie superior de su color y sin tocar la rampa.</p></article>
+        <article class="point-card"><strong>+2</strong><h3>Robot estacionado</h3><p>Proyección completa dentro del semicírculo de su alianza.</p></article>
+        <article class="point-card accent"><strong>+2</strong><h3>Bonus de alianza</h3><p>Si ambos robots se estacionan: 6 puntos en total.</p></article>
+      </div>
+
+      <div class="rules-split">
+        <div class="rule-panel">
+          <h3>Faltas</h3>
+          <ul class="foul-list">
+            <li><b>+1 al rival</b><span>Violación de posesión: más de 1 pelota o más de 1 cubo a la vez.</span></li>
+            <li><b>+3 al rival</b><span>Falta menor: pinning leve o invasión momentánea.</span></li>
+            <li><b>+10 al rival</b><span>Falta mayor: daño deliberado, violar una zona protegida o conducta antideportiva.</span></li>
+            <li><b class="card yellow-card">Amarilla</b><span>Advertencia formal. Dos amarillas en la misma partida equivalen a una roja.</span></li>
+            <li><b class="card red-card">Roja</b><span>Descalificación del equipo en esa partida.</span></li>
+          </ul>
+          <p class="fine">Pinning: no se puede inmovilizar a un rival más de 5 s. Las bahías y plataformas son zonas protegidas.</p>
+        </div>
+        <div class="rule-panel">
+          <h3>Ranking</h3>
+          <div class="rp-row">
+            <div><b>2 RP</b><span>Victoria</span></div>
+            <div><b>1 RP</b><span>Empate</span></div>
+            <div><b>0 RP</b><span>Derrota</span></div>
+          </div>
+          <p>El ranking se ordena por el <strong>promedio de RP</strong> por partida clasificatoria. Desempates, en orden:</p>
+          <ol class="tb-list">
+            <li>Promedio de puntuación total de alianza</li>
+            <li>Promedio de puntos por cubos</li>
+            <li>Promedio de puntos por estacionamiento</li>
+            <li>Promedio de puntos por pelotas</li>
+            <li>Lanzamiento de moneda</li>
+          </ol>
+        </div>
+      </div>
     </section>
 
     <section class="section split reverse" id="robot">
       <figure class="visual-card robot-card">
-        <img src="assets/robot-kit.png" alt="Robot oficial y componentes del kit Nexus Challenge" />
+        <img src="assets/robot-kit.webp" alt="Robot oficial y componentes del kit Nexus Challenge" width="1313" height="1198" loading="lazy" decoding="async" />
       </figure>
       <div class="section-heading compact">
-        <span>03 · PLATAFORMA</span>
+        <span>04 · PLATAFORMA</span>
         <h2>Robot oficial</h2>
         <p>
-          Una base común para todos y mecánica abierta para que cada equipo construya
-          su propia solución.
+          El kit Keybot es una plataforma base, no una solución cerrada. Cada equipo
+          puede modificar el chasis y diseñar sus propios mecanismos.
         </p>
         <div class="specs">
-          <div><b>Arduino UNO</b><span>Control</span></div>
-          <div><b>HC-05</b><span>Bluetooth</span></div>
-          <div><b>2WD</b><span>Tracción</span></div>
-          <div><b>SG90</b><span>Actuador</span></div>
+          <div><b>Arduino UNO / Nano</b><span>Control</span></div>
+          <div><b>HM-10</b><span>Bluetooth</span></div>
+          <div><b>2 motores TT</b><span>Tracción · L298N</span></div>
+          <div><b>SG90 / MG90S</b><span>Actuador</span></div>
           <div><b>HC-SR04</b><span>Distancia</span></div>
           <div><b>TCRT5000 ×2</b><span>Sensores IR</span></div>
         </div>
-        <p class="callout">Electrónica limitada. <strong>Mecánica abierta.</strong></p>
+        <h3 class="limits-title">Límites de inspección</h3>
+        <div class="limits">
+          <div><b>27 × 22 × 20 cm</b><span>Caja de inicio</span></div>
+          <div><b>30 cm</b><span>Expansión máx.</span></div>
+          <div><b>1.5 kg</b><span>Peso máx.</span></div>
+          <div><b>8.4 V</b><span>Voltaje máx.</span></div>
+        </div>
+        <p class="callout">Electrónica limitada. <strong>Mecánica abierta.</strong> Kill switch visible obligatorio y módulo Bluetooth renombrado como <code>NEXUS_SE_###</code>.</p>
       </div>
     </section>
 
     <section class="section match-section" id="match">
       <div class="section-heading">
-        <span>04 · MATCH CENTER</span>
+        <span>05 · MATCH CENTER</span>
         <h2>Control de match y scoring</h2>
-        <p>Herramienta local para prácticas, demostraciones y operación básica del reto.</p>
+        <p>Herramienta local para prácticas, demostraciones y operación básica del reto. Las faltas se registran en la alianza que las comete y suman al rival.</p>
       </div>
 
       <div class="match-grid">
         <div class="timer-panel">
           <div class="status-pill" id="phasePill">LISTO</div>
-          <div class="timer" id="timer">01:30</div>
-          <div class="timer-note" id="timerNote">90 segundos para explorar, competir y regresar.</div>
+          <div class="timer" id="timer" role="timer" aria-live="off">01:30</div>
+          <div class="timer-note" id="timerNote" aria-live="polite">90 segundos para explorar, competir y estacionarse.</div>
 
           <div class="timer-actions">
             <button class="btn btn-yellow" id="startBtn">Iniciar</button>
@@ -204,72 +284,126 @@
         </div>
 
         <div class="scoreboard">
-          <div class="alliance alliance-blue">
+          <div class="alliance alliance-blue" data-team="blue">
             <h3>BLUE</h3>
             <div class="score" id="blueScore">0</div>
+            <div class="score-breakdown" id="blueBreakdown">Cancha 0 · Faltas del rival 0</div>
             <div class="counter-row">
-              <span>Pelotas <small>+1</small></span>
+              <span>Pelotas en bahía <small>+1</small></span>
               <div class="counter">
-                <button data-team="blue" data-type="balls" data-delta="-1">−</button>
+                <button data-team="blue" data-type="balls" data-delta="-1" aria-label="Quitar pelota Blue">−</button>
                 <b id="blueBalls">0</b>
-                <button data-team="blue" data-type="balls" data-delta="1">+</button>
+                <button data-team="blue" data-type="balls" data-delta="1" aria-label="Agregar pelota Blue">+</button>
               </div>
             </div>
             <div class="counter-row">
-              <span>Cubos <small>+3</small></span>
+              <span>Cubos en plataforma <small>+3</small></span>
               <div class="counter">
-                <button data-team="blue" data-type="cubes" data-delta="-1">−</button>
+                <button data-team="blue" data-type="cubes" data-delta="-1" aria-label="Quitar cubo Blue">−</button>
                 <b id="blueCubes">0</b>
-                <button data-team="blue" data-type="cubes" data-delta="1">+</button>
+                <button data-team="blue" data-type="cubes" data-delta="1" aria-label="Agregar cubo Blue">+</button>
               </div>
             </div>
             <div class="counter-row">
-              <span>Robots en Nexus <small>+2</small></span>
+              <span>Robots estacionados <small>+2 c/u</small></span>
               <div class="counter">
-                <button data-team="blue" data-type="robots" data-delta="-1">−</button>
+                <button data-team="blue" data-type="robots" data-delta="-1" aria-label="Quitar robot estacionado Blue">−</button>
                 <b id="blueRobots">0</b>
-                <button data-team="blue" data-type="robots" data-delta="1">+</button>
+                <button data-team="blue" data-type="robots" data-delta="1" aria-label="Agregar robot estacionado Blue">+</button>
               </div>
             </div>
-            <label class="bonus">
-              <input id="blueBonus" type="checkbox"> Ambos regresan <small>+2</small>
-            </label>
+            <div class="bonus" id="blueBonus" aria-live="polite">Bonus de alianza <small>+2 si ambos se estacionan</small></div>
+            <details class="fouls">
+              <summary>Faltas de Blue <small>suman a Yellow</small> <span class="foul-count" id="blueFoulCount">0</span></summary>
+              <div class="counter-row">
+                <span>Posesión <small>+1 rival</small></span>
+                <div class="counter">
+                  <button data-team="blue" data-type="poss" data-delta="-1" aria-label="Quitar violación de posesión Blue">−</button>
+                  <b id="bluePoss">0</b>
+                  <button data-team="blue" data-type="poss" data-delta="1" aria-label="Agregar violación de posesión Blue">+</button>
+                </div>
+              </div>
+              <div class="counter-row">
+                <span>Menores <small>+3 rival</small></span>
+                <div class="counter">
+                  <button data-team="blue" data-type="minor" data-delta="-1" aria-label="Quitar falta menor Blue">−</button>
+                  <b id="blueMinor">0</b>
+                  <button data-team="blue" data-type="minor" data-delta="1" aria-label="Agregar falta menor Blue">+</button>
+                </div>
+              </div>
+              <div class="counter-row">
+                <span>Mayores <small>+10 rival</small></span>
+                <div class="counter">
+                  <button data-team="blue" data-type="major" data-delta="-1" aria-label="Quitar falta mayor Blue">−</button>
+                  <b id="blueMajor">0</b>
+                  <button data-team="blue" data-type="major" data-delta="1" aria-label="Agregar falta mayor Blue">+</button>
+                </div>
+              </div>
+            </details>
           </div>
 
           <div class="versus">VS</div>
 
-          <div class="alliance alliance-yellow">
+          <div class="alliance alliance-yellow" data-team="yellow">
             <h3>YELLOW</h3>
             <div class="score" id="yellowScore">0</div>
+            <div class="score-breakdown" id="yellowBreakdown">Cancha 0 · Faltas del rival 0</div>
             <div class="counter-row">
-              <span>Pelotas <small>+1</small></span>
+              <span>Pelotas en bahía <small>+1</small></span>
               <div class="counter">
-                <button data-team="yellow" data-type="balls" data-delta="-1">−</button>
+                <button data-team="yellow" data-type="balls" data-delta="-1" aria-label="Quitar pelota Yellow">−</button>
                 <b id="yellowBalls">0</b>
-                <button data-team="yellow" data-type="balls" data-delta="1">+</button>
+                <button data-team="yellow" data-type="balls" data-delta="1" aria-label="Agregar pelota Yellow">+</button>
               </div>
             </div>
             <div class="counter-row">
-              <span>Cubos <small>+3</small></span>
+              <span>Cubos en plataforma <small>+3</small></span>
               <div class="counter">
-                <button data-team="yellow" data-type="cubes" data-delta="-1">−</button>
+                <button data-team="yellow" data-type="cubes" data-delta="-1" aria-label="Quitar cubo Yellow">−</button>
                 <b id="yellowCubes">0</b>
-                <button data-team="yellow" data-type="cubes" data-delta="1">+</button>
+                <button data-team="yellow" data-type="cubes" data-delta="1" aria-label="Agregar cubo Yellow">+</button>
               </div>
             </div>
             <div class="counter-row">
-              <span>Robots en Nexus <small>+2</small></span>
+              <span>Robots estacionados <small>+2 c/u</small></span>
               <div class="counter">
-                <button data-team="yellow" data-type="robots" data-delta="-1">−</button>
+                <button data-team="yellow" data-type="robots" data-delta="-1" aria-label="Quitar robot estacionado Yellow">−</button>
                 <b id="yellowRobots">0</b>
-                <button data-team="yellow" data-type="robots" data-delta="1">+</button>
+                <button data-team="yellow" data-type="robots" data-delta="1" aria-label="Agregar robot estacionado Yellow">+</button>
               </div>
             </div>
-            <label class="bonus">
-              <input id="yellowBonus" type="checkbox"> Ambos regresan <small>+2</small>
-            </label>
+            <div class="bonus" id="yellowBonus" aria-live="polite">Bonus de alianza <small>+2 si ambos se estacionan</small></div>
+            <details class="fouls">
+              <summary>Faltas de Yellow <small>suman a Blue</small> <span class="foul-count" id="yellowFoulCount">0</span></summary>
+              <div class="counter-row">
+                <span>Posesión <small>+1 rival</small></span>
+                <div class="counter">
+                  <button data-team="yellow" data-type="poss" data-delta="-1" aria-label="Quitar violación de posesión Yellow">−</button>
+                  <b id="yellowPoss">0</b>
+                  <button data-team="yellow" data-type="poss" data-delta="1" aria-label="Agregar violación de posesión Yellow">+</button>
+                </div>
+              </div>
+              <div class="counter-row">
+                <span>Menores <small>+3 rival</small></span>
+                <div class="counter">
+                  <button data-team="yellow" data-type="minor" data-delta="-1" aria-label="Quitar falta menor Yellow">−</button>
+                  <b id="yellowMinor">0</b>
+                  <button data-team="yellow" data-type="minor" data-delta="1" aria-label="Agregar falta menor Yellow">+</button>
+                </div>
+              </div>
+              <div class="counter-row">
+                <span>Mayores <small>+10 rival</small></span>
+                <div class="counter">
+                  <button data-team="yellow" data-type="major" data-delta="-1" aria-label="Quitar falta mayor Yellow">−</button>
+                  <b id="yellowMajor">0</b>
+                  <button data-team="yellow" data-type="major" data-delta="1" aria-label="Agregar falta mayor Yellow">+</button>
+                </div>
+              </div>
+            </details>
           </div>
         </div>
+
+        <div class="match-result" id="matchResult" aria-live="polite">Empate · 1 RP para cada alianza</div>
 
         <div class="score-actions">
           <button class="btn btn-ghost" id="clearScoreBtn">Limpiar marcador</button>
@@ -280,51 +414,98 @@
 
     <section class="section event-section" id="evento">
       <div class="section-heading">
-        <span>05 · EVENTO</span>
+        <span>06 · EVENTO</span>
         <h2>La misión completa</h2>
+        <p>Sábado 5 de diciembre de 2026 en el Tec de Monterrey, Campus Hidalgo, como parte de TECH FEST 2026.</p>
       </div>
 
       <div class="event-grid">
         <article>
           <strong>40</strong>
-          <span>equipos meta</span>
-          <p>Equipos de 4 a 5 estudiantes.</p>
+          <span>equipos como máximo</span>
+          <p>De 4 a 5 estudiantes y un coach adulto. En cancha: un driver y un student coach.</p>
         </article>
         <article>
-          <strong>5</strong>
+          <strong>5+</strong>
           <span>matches clasificatorios</span>
-          <p>Alianzas rotativas durante la fase clasificatoria.</p>
+          <p>Alianzas rotativas que buscan mezclar primaria y secundaria.</p>
         </article>
         <article>
           <strong>$2,800</strong>
           <span>Early Bird</span>
-          <p>Limitado a los primeros 20 equipos.</p>
+          <p>MXN por equipo. Solo para los primeros 20 equipos registrados.</p>
         </article>
         <article>
           <strong>$3,200</strong>
           <span>Regular</span>
-          <p>Inscripción por equipo.</p>
+          <p>MXN por equipo.</p>
         </article>
+      </div>
+
+      <div class="event-split">
+        <div class="rule-panel">
+          <h3>Fase final</h3>
+          <p>Los 4 mejores del ranking son capitanes y eligen, en orden, a su compañero de alianza. Un equipo que declina una invitación ya no puede ser elegido por otro capitán.</p>
+          <div class="bracket">
+            <div><small>Semifinal 1</small><b>Alianza 1 vs Alianza 4</b></div>
+            <div><small>Semifinal 2</small><b>Alianza 2 vs Alianza 3</b></div>
+            <div class="final"><small>Gran final</small><b>Ganadores de cada semifinal</b></div>
+          </div>
+          <p class="fine">Todas las series son al mejor de 3. Si una partida termina empatada, la serie continúa hasta que una alianza gane dos.</p>
+
+          <h3 class="awards-title">Premios</h3>
+          <ul class="awards">
+            <li>Alianza Campeona <span>trofeo para ambos equipos</span></li>
+            <li>Alianza Finalista</li>
+            <li>Excelencia en Ingeniería</li>
+            <li>Estrategia e Innovación</li>
+            <li>Espíritu y Colaboración Competitiva <span>rúbrica de Spirit Score</span></li>
+            <li>Líder de División Primaria y Secundaria</li>
+          </ul>
+        </div>
+
+        <div class="rule-panel">
+          <h3>Agenda del 5 de diciembre</h3>
+          <ol class="agenda">
+            <li><time>07:30</time><span>Registro de equipos y acceso a pits</span></li>
+            <li><time>07:30–08:20</time><span>Inspección técnica obligatoria</span></li>
+            <li><time>08:30</time><span>Ceremonia de inauguración</span></li>
+            <li><time>08:42</time><span>Reglas de juego y reunión de capitanes</span></li>
+            <li><time>08:50</time><span>Clasificatorias · Bloque 1 (matches 1 a 25)</span></li>
+            <li><time>10:18</time><span>Pausa técnica</span></li>
+            <li><time>10:30</time><span>Clasificatorias · Bloque 2 (matches 26 a 50)</span></li>
+            <li><time>11:58</time><span>Publicación de la tabla general</span></li>
+            <li><time>12:10</time><span>Selección de alianzas</span></li>
+            <li class="hl"><time>12:25</time><span>Playoffs: semifinales y final</span></li>
+            <li><time>13:15</time><span>Premiación oficial</span></li>
+            <li><time>13:40</time><span>Fotografía oficial</span></li>
+            <li><time>13:50</time><span>Clausura</span></li>
+          </ol>
+          <p class="fine">Los horarios pueden cambiar. Los cambios se avisarán por el grupo oficial de WhatsApp.</p>
+        </div>
       </div>
 
       <div class="final-banner">
         <div>
           <small>NEXUS CHALLENGE 2026</small>
           <h3>Explora. Diseña. Compite.</h3>
-          <p>5 de diciembre de 2026 · Tecnológico de Monterrey, Campus Hidalgo</p>
+          <p>Reglamento oficial v1.4 · 20 de noviembre de 2026. Para la competencia se usa el último reglamento compartido en el grupo oficial.</p>
         </div>
-        <a class="btn btn-yellow" href="#inicio">Volver arriba</a>
+        <div class="banner-actions">
+          <a class="btn btn-yellow" href="https://drive.google.com/file/d/1NEFhxHEbgVcxr0g0PdNnN9bzA6Ss_avW/view" target="_blank" rel="noopener">Ver reglamento <span aria-hidden="true">↗</span></a>
+          <a class="btn btn-ghost" href="https://greenyellow-swan-764920.hostingersite.com/" target="_blank" rel="noopener">Ir a TECH FEST</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <a href="#inicio"><img class="footer-logo" src="assets/nexus-logo.png" alt="Nexus Challenge 2026" width="2152" height="731" loading="lazy" /></a>
-    <span class="footer-organizer"><span class="organizer-logo"><img src="assets/keybot-logo.png" alt="Keybot" width="44" height="44" loading="lazy" /></span><span>Una iniciativa de Keybot · Space Exploration</span></span>
+    <a href="#inicio"><img class="footer-logo" src="assets/nexus-logo.webp" alt="Nexus Challenge 2026" width="1400" height="476" loading="lazy" /></a>
+    <span class="footer-organizer"><span class="organizer-logo"><img src="assets/keybot-logo.webp" alt="Keybot" width="44" height="44" loading="lazy" /></span><span>Una iniciativa de Keybot 5716 · Parte de <a class="footer-tf" href="https://greenyellow-swan-764920.hostingersite.com/" target="_blank" rel="noopener">TEC<span class="tf-h">H</span> FEST 2026</a></span></span>
     <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false">Pausar animaciones</button>
   </footer>
 
-  <div class="toast" id="toast">Resultado copiado</div>
-  <script src="app.js"></script>
+  <div class="toast" id="toast" role="status">Resultado copiado</div>
+  <script src="app.js?v=20261123-techfest"></script>
 </body>
 </html>
