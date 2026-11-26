@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/nexus-logo.webp" type="image/webp">
-  <link rel="stylesheet" href="styles.css?v=20261123-techfest" />
+  <link rel="stylesheet" href="styles.css?v=20261126-earlybird" />
 </head>
 <body>
   <div class="stars stars-a" aria-hidden="true"></div>
@@ -90,6 +90,17 @@
         <div class="orbit-coordinate coordinate-bottom"><i></i> CONECTA · CONSTRUYE · EXPLORA</div>
       </div>
       <a class="scroll-cue" href="#reto"><span aria-hidden="true">↓</span> DESCUBRE LA MISIÓN</a>
+    </section>
+
+    <section class="eb-banner" aria-label="Early Bird agotado">
+      <div class="eb-glow" aria-hidden="true"></div>
+      <div class="eb-rocket" aria-hidden="true">🚀</div>
+      <div class="eb-copy">
+        <small>Actualización de misión</small>
+        <h2>¡Early Bird <span>agotado!</span></h2>
+        <p>Los 20 lugares con precio Early Bird despegaron en tiempo récord. ¡Gracias, exploradores! Las inscripciones continúan con tarifa regular hasta completar los 40 equipos.</p>
+      </div>
+      <a class="btn btn-yellow eb-btn" href="#evento">Ver detalles <span aria-hidden="true">↗</span></a>
     </section>
 
     <section class="countdown-wrap" aria-label="Cuenta regresiva">
@@ -430,15 +441,16 @@
           <span>matches clasificatorios</span>
           <p>Alianzas rotativas que buscan mezclar primaria y secundaria.</p>
         </article>
-        <article>
-          <strong>$2,800</strong>
+        <article class="eb-soldout">
+          <b class="eb-stamp">¡Agotado!</b>
+          <strong><s>$2,800</s></strong>
           <span>Early Bird</span>
-          <p>MXN por equipo. Solo para los primeros 20 equipos registrados.</p>
+          <p>¡Los 20 lugares ya fueron ocupados! Gracias a todos los equipos que se sumaron a la misión.</p>
         </article>
-        <article>
+        <article class="eb-open">
           <strong>$3,200</strong>
-          <span>Regular</span>
-          <p>MXN por equipo.</p>
+          <span>Regular · Inscripciones abiertas</span>
+          <p>MXN por equipo. Aún hay lugar: ¡asegura el tuyo!</p>
         </article>
       </div>
 
