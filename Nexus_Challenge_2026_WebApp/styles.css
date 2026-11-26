@@ -538,3 +538,29 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;col
   .agenda li{grid-template-columns:1fr;gap:2px}
 }
 .bonus small{margin:0 auto 0 8px}
+
+/* Early Bird agotado */
+.eb-banner{
+  position:relative;overflow:hidden;max-width:1180px;margin:0 auto 18px;padding:24px 28px;border-radius:18px;
+  display:flex;align-items:center;gap:22px;
+  border:1px solid rgba(255,196,0,.45);
+  background:linear-gradient(110deg,rgba(255,196,0,.16),rgba(22,136,255,.14) 60%,rgba(255,255,255,.03));
+  box-shadow:0 0 0 1px rgba(255,196,0,.08),0 18px 60px rgba(255,196,0,.12);
+}
+.eb-glow{position:absolute;inset:-60% auto -60% -30%;width:40%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.18),transparent);transform:skewX(-20deg);animation:eb-shine 4.5s ease-in-out infinite;pointer-events:none}
+.eb-rocket{font-size:42px;line-height:1;flex-shrink:0;animation:eb-launch 2.6s ease-in-out infinite}
+.eb-copy{flex:1;min-width:0}
+.eb-copy small{display:block;text-transform:uppercase;letter-spacing:.2em;font-size:10px;font-weight:800;color:var(--yellow2)}
+.eb-copy h2{margin:6px 0 6px;font:400 clamp(26px,3.4vw,38px)/1 Anton,Impact,sans-serif;letter-spacing:.02em;text-transform:uppercase}
+.eb-copy h2 span{color:var(--yellow)}
+.eb-copy p{margin:0;color:#d5e2f0;font-size:14px;line-height:1.55;max-width:720px}
+.eb-btn{flex-shrink:0}
+.event-grid article{position:relative}
+.eb-soldout{overflow:hidden;border-color:rgba(255,196,0,.4)!important;background:rgba(255,196,0,.06)!important}
+.eb-soldout strong s{color:var(--muted);text-decoration-color:var(--yellow);text-decoration-thickness:3px}
+.eb-stamp{position:absolute;top:16px;right:-34px;transform:rotate(35deg);padding:5px 42px;background:var(--yellow);color:var(--navy);font:900 11px Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.eb-open{border-color:rgba(22,136,255,.45)!important;background:rgba(22,136,255,.08)!important}
+@keyframes eb-shine{0%,60%{left:-30%}100%{left:120%}}
+@keyframes eb-launch{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-6deg)}}
+@media(max-width:900px){.eb-banner{margin-left:16px;margin-right:16px;flex-wrap:wrap}.eb-btn{width:100%;justify-content:center}}
+@media(max-width:600px){.eb-banner{padding:20px}.eb-rocket{font-size:34px}}
